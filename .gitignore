@@ -1,0 +1,5 @@
+*.tar.xz
+bootstrap
+build_tmp
+arch-bootstrap.sh
+
