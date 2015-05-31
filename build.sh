@@ -33,6 +33,20 @@ build_tmp_dir="build_tmp"
 result_dir="bootstrap"
 bootstrap_tarfile="bootstrap.tar.xz"
 
+function remove_old_dir() {
+	if [ -d ${build_tmp_dir} ]; then
+		rm -fr ${build_tmp_dir}
+	fi
+
+	if [ -d ${result_dir} ]; then
+		rm -fr ${result_dir}
+	fi
+	
+	if [ -f ${bootstrap_tarfile} ]; then
+		rm -fr ${bootstrap_tarfile}
+	fi
+}
+
 function create_bootstrap() {
 	if [ ! -d ${build_tmp_dir} ]; then
 		mkdir ${build_tmp_dir}
@@ -60,7 +74,7 @@ function make_bootstrap_tar_file() {
 }
 
 
-
+remove_old_dir
 download_arch-bootstrap_script
 install_wget
 create_bootstrap
