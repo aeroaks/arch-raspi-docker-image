@@ -9,7 +9,7 @@ if [ ${uid} -ne 0 ]; then
 fi
 
 function download_arch-bootstrap_script() {
-	curl -O https://raw.githubusercontent.com/yannayl/arch-bootstrap/master/arch-bootstrap.sh
+	curl -O https://raw.githubusercontent.com/tokland/arch-bootstrap/master/arch-bootstrap.sh
 	if [ $? -ne 0 ]; then
 		echo "Failed to download arch-bootstrap.sh."
 		exit -1
@@ -52,7 +52,7 @@ function create_bootstrap() {
 		mkdir ${build_tmp_dir}
 	fi
 
-	./arch-bootstrap.sh -a arm -r http://mirror.archlinuxarm.org -d ${build_tmp_dir} ${result_dir}
+	./arch-bootstrap.sh -a armv6h -d ${build_tmp_dir} ${result_dir}
 	if [ $? -ne 0 ]; then
 		echo "Faild to create bootstrap image"
 		exit -1
