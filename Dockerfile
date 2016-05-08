@@ -1,6 +1,6 @@
 FROM scratch
 
-MAINTAINER Masami Ichikawa <masami256@gmail.com>
+MAINTAINER Akshay Verma <akshay.tvastr@yahoo.com>
 
 ADD bootstrap.tar.xz /
 
